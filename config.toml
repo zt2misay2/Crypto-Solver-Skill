@@ -1,0 +1,65 @@
+# Crypto-Solver-Skill 项目配置文件
+
+## 项目信息
+name = "crypto-solver-skill"
+version = "1.0.0"
+description = "CTF 密码学自动求解 SKILL - 支持 RSA、ECC、格密码等"
+authors = ["Crypto-Solver-Team"]
+license = "MIT"
+
+## Python 依赖
+[dependencies]
+python = ">=3.8"
+gmpy2 = ">=2.1.0"
+sympy = ">=1.12"
+pwntools = ">=4.0.0"
+numpy = ">=1.20.0"
+
+## 开发依赖
+[dev-dependencies]
+pytest = ">=7.0"
+black = ">=22.0"
+flake8 = ">=4.0"
+
+## 支持的 AI IDE
+supported_ais = ["claude", "codex", "cursor", "windsurf", "copilot", "gemini"]
+
+## 技能特性
+[skills]
+analysis = true
+code_generation = true
+sagemath_support = true
+dynamic_challenges = true
+wsl_integration = true
+
+## 时间配置
+[timeout]
+default = 300  # 5 分钟
+long_computation = 600  # 10 分钟
+interactive = 30  # 交互式命令
+
+## 输出格式
+[output]
+markdown = true
+latex_math = true
+code_blocks = true
+analysis_document = "analyse.md"
+
+## 知识库
+[knowledge_base]
+file = "prompt.md"
+auto_load = true
+version = "1.0.0"
+
+## 工作目录
+[paths]
+tools = "./tools"
+templates = "./templates"
+attacks = "./templates/attack-templates"
+cache = "./.crypto-solver-cache"
+
+## 运行环境
+[environment]
+use_wsl = true  # Windows 用户使用 WSL
+sage_path = "sage"  # SageMath 命令
+python_version = "3.8+"

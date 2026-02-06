@@ -1,0 +1,83 @@
+name: crypto-solver
+version: 1.0.0
+description: CTF 密码学自动求解 SKILL - 支持 RSA、ECC、格密码、对称加密等攻击
+author: Crypto-Solver-Team
+license: MIT
+supported_ais:
+  - claude
+  - codex
+  - cursor
+  - windsurf
+  - copilot
+  - gemini
+
+metadata:
+  category: cryptography
+  tags:
+    - ctf
+    - cryptanalysis
+    - sagemath
+    - rsa
+    - ecc
+    - lattice
+    - attacks
+
+capabilities:
+  - name: sagemath-executor
+    description: 在 WSL 中执行 SageMath 代码用于密码学分析
+    command: python3 tools/sage-executor.py
+    environment: wsl
+    timeout: 300
+    requires:
+      - sage
+      - python3
+
+  - name: attack-generator
+    description: 根据漏洞分析自动生成攻击代码
+    templates: templates/attack-templates/
+    output_format: python
+
+  - name: crypto-analyzer
+    description: 分析密码学系统结构和漏洞
+    analysis_depth: deep
+    knowledge_base: prompt.md
+
+knowledge_base:
+  file: prompt.md
+  auto_trigger_keywords:
+    - 密码学
+    - cryptography
+    - RSA
+    - ECC
+    - 格密码
+    - lattice
+    - 求解
+    - 漏洞分析
+    - CTF
+    - 加密
+    - 攻击
+
+commands:
+  - name: analyze-crypto
+    description: 分析密码学系统
+    usage: "/skill analyze-crypto <file>"
+
+  - name: generate-attack
+    description: 生成攻击代码
+    usage: "/skill generate-attack <vulnerability>"
+
+  - name: run-sage
+    description: 执行 SageMath 代码
+    usage: "/skill run-sage <code>"
+
+  - name: solve-challenge
+    description: 一键求解 CTF 题目
+    usage: "/skill solve-challenge <challenge-file>"
+
+output_format:
+  markdown: true
+  code_blocks: true
+  latex_math: true
+  documentation:
+    analyse_md: true
+    solution_steps: true

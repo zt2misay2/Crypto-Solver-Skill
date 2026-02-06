@@ -1,0 +1,92 @@
+{
+  "name": "crypto-solver-skill",
+  "version": "1.0.0",
+  "description": "CTF Cryptography Solver SKILL for Claude Code, Codex, Cursor - Automated exploit generation and analysis",
+  "keywords": [
+    "cryptography",
+    "ctf",
+    "security",
+    "rsa",
+    "ecc",
+    "lattice",
+    "sagemath",
+    "ai-ide",
+    "claude-code",
+    "codex",
+    "cursor"
+  ],
+  "author": {
+    "name": "Crypto-Solver-Team",
+    "email": "support@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<owner>/Crypto-Solver-Skill"
+  },
+  "bugs": {
+    "url": "https://github.com/<owner>/Crypto-Solver-Skill/issues"
+  },
+  "homepage": "https://github.com/<owner>/Crypto-Solver-Skill",
+  "main": "skill.yaml",
+  "files": [
+    "skill.yaml",
+    "prompt.md",
+    "README.md",
+    "SETUP_GUIDE.md",
+    "config.toml",
+    "tools/",
+    "templates/"
+  ],
+  "scripts": {
+    "test": "pytest tests/ -v",
+    "lint": "flake8 tools/ templates/",
+    "format": "black tools/ templates/",
+    "docs": "cd docs && make html",
+    "setup": "node setup.js",
+    "verify": "python3 -m pytest tests/verify.py"
+  },
+  "dependencies": {
+    "none": "pure-python-skill"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "installConfig": {
+    "hoisting": true,
+    "strictPeerDependencies": false,
+    "auto-install-peers": true
+  },
+  "ai-ides": [
+    "claude-code",
+    "codex-cli",
+    "cursor",
+    "windsurf",
+    "github-copilot",
+    "google-gemini"
+  ],
+  "platforms": [
+    "windows",
+    "macos",
+    "linux"
+  ],
+  "features": {
+    "sagemath": true,
+    "python": true,
+    "wsl": true,
+    "remote": true
+  },
+  "config": {
+    "timeout": 300,
+    "python_version": "3.8",
+    "sage_required": true,
+    "wsl_recommended": true
+  },
+  "categories": [
+    "cryptography",
+    "security",
+    "mathematics",
+    "automation"
+  ]
+}
