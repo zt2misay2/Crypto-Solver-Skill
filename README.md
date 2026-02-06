@@ -30,6 +30,28 @@
 
 ---
 
+## Codex (专用)
+
+这个仓库已包含 **Codex 可识别的 `SKILL.md`**（与本仓库里的 `skill.yaml`/`prompt.md` 等并存，不影响其它平台）。
+
+### 安装
+
+Codex 会从 `$CODEX_HOME/skills`（默认 `~/.codex/skills`）加载 skills。把本仓库放到该目录即可：
+
+```bash
+# 默认 CODEX_HOME=~/.codex
+mkdir -p ~/.codex/skills/crypto-solver-skill
+git clone https://github.com/zt2misay2/Crypto-Solver-Skill.git ~/.codex/skills/crypto-solver-skill
+# 或者如果已 clone：更新
+cd ~/.codex/skills/crypto-solver-skill && git pull
+```
+
+然后重启 Codex。
+
+### 使用
+
+在 Codex 对话里直接提：`使用 crypto-solver-skill` 或描述你的密码学题目并贴出源码/输出，按 `SKILL.md` 的 Phase 流程推进。
+
 ## 🚀 安装
 
 ### 方式 1: 通过 npm Skills（推荐）
